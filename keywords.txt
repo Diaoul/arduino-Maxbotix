@@ -1,0 +1,32 @@
+# Class
+Maxbotix           	KEYWORD1
+
+# Functions
+setup              	KEYWORD2
+getRange           	KEYWORD2
+getSampleSize      	KEYWORD2
+readSample         	KEYWORD2
+getSample          	KEYWORD2
+getSampleMedian    	KEYWORD2
+getSampleMode      	KEYWORD2
+getSampleBest      	KEYWORD2
+getModel           	KEYWORD2
+getInput           	KEYWORD2
+getFilter          	KEYWORD2
+setADSampleDelay    KEYWORD2
+toCentimeters      	KEYWORD2
+toInches           	KEYWORD2
+
+# Enums
+LV                 	LITERAL1
+XL                 	LITERAL1
+HRLV               	LITERAL1
+PW                 	LITERAL1
+AN                 	LITERAL1
+TX                 	LITERAL1
+NONE               	LITERAL1
+MEDIAN             	LITERAL1
+HIGHEST_MODE       	LITERAL1
+LOWEST_MODE        	LITERAL1
+BEST               	LITERAL1
+SIMPLE             	LITERAL1
