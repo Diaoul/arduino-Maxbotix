@@ -2,7 +2,6 @@
 Maxbotix           	KEYWORD1
 
 # Functions
-setup              	KEYWORD2
 getRange           	KEYWORD2
 getSampleSize      	KEYWORD2
 readSample         	KEYWORD2
@@ -13,7 +12,7 @@ getSampleBest      	KEYWORD2
 getModel           	KEYWORD2
 getInput           	KEYWORD2
 getFilter          	KEYWORD2
-setADSampleDelay    KEYWORD2
+setADSampleDelay   	KEYWORD2
 toCentimeters      	KEYWORD2
 toInches           	KEYWORD2
 
