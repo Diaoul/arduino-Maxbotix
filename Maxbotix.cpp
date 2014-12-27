@@ -4,6 +4,7 @@ Maxbotix::Maxbotix(uint8_t pin, MAXBOTIX_INPUT_t input, MAXBOTIX_MODEL_t model, 
                    uint8_t sample_size) :
     pin(pin), input(input), model(model), filter(filter), sample_size(sample_size)
 {
+#ifdef MAXBOTIX_WITH_SOFTWARE_SERIAL
     if (input == TX)
     {
         serial = new RxSoftwareSerial(pin, true);
@@ -11,16 +12,21 @@ Maxbotix::Maxbotix(uint8_t pin, MAXBOTIX_INPUT_t input, MAXBOTIX_MODEL_t model, 
     }
     else
     {
+#endif
         pinMode(pin, INPUT);
+#ifdef MAXBOTIX_WITH_SOFTWARE_SERIAL
     }
+#endif
     init();
 }
 
+#ifdef MAXBOTIX_WITH_SOFTWARE_SERIAL
 Maxbotix::Maxbotix(Stream* serial, MAXBOTIX_MODEL_t model, MAXBOTIX_FILTER_t filter, uint8_t sample_size) :
     input(TX), model(model), serial(serial), filter(filter), sample_size(sample_size)
 {
     init();
 }
+#endif
 
 
 void Maxbotix::init()
@@ -175,6 +181,7 @@ float Maxbotix::readSensor()
             break;
         }
         break;
+#ifdef MAXBOTIX_WITH_SOFTWARE_SERIAL
     case TX:
         switch (model)
         {
@@ -191,6 +198,7 @@ float Maxbotix::readSensor()
             break;
         }
         break;
+#endif
     default:
         break;
     }

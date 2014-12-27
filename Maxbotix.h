@@ -1,8 +1,13 @@
 #ifndef Maxbotix_h
 #define Maxbotix_h
 
+// Configuration
+//#define MAXBOTIX_WITH_SOFTWARE_SERIAL 1
+
 #include <Arduino.h>
+#ifdef MAXBOTIX_WITH_SOFTWARE_SERIAL
 #include "RxSoftwareSerial.h"
+#endif
 
 class Maxbotix
 {
@@ -21,7 +26,9 @@ public:
     {
         PW,
         AN,
+#ifdef MAXBOTIX_WITH_SOFTWARE_SERIAL
         TX
+#endif
     }
     MAXBOTIX_INPUT_t;
 
@@ -40,7 +47,9 @@ public:
     // init/delete
     Maxbotix(uint8_t pin, MAXBOTIX_INPUT_t input, MAXBOTIX_MODEL_t model, MAXBOTIX_FILTER_t filter = NONE,
              uint8_t sample_size = 0);
+#ifdef MAXBOTIX_WITH_SOFTWARE_SERIAL
     Maxbotix(Stream* serial, MAXBOTIX_MODEL_t model, MAXBOTIX_FILTER_t filter = NONE, uint8_t sample_size = 0);
+#endif
     ~Maxbotix();
 
     // simple api
