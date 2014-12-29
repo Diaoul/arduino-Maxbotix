@@ -13,8 +13,7 @@ class Maxbotix
 {
 public:
     // models
-    typedef enum
-    {
+    typedef enum {
         LV,
         XL,
         HRLV
@@ -22,8 +21,7 @@ public:
     MAXBOTIX_MODEL_t;
 
     // inputs
-    typedef enum
-    {
+    typedef enum {
         PW,
         AN,
 #ifdef MAXBOTIX_WITH_SOFTWARE_SERIAL
@@ -33,8 +31,7 @@ public:
     MAXBOTIX_INPUT_t;
 
     // filters
-    typedef enum
-    {
+    typedef enum {
         NONE,
         MEDIAN,
         HIGHEST_MODE,
