@@ -90,11 +90,11 @@ public:
     }
 
     // utilities
-    static float toCentimeters(int inches)
+    static float toCentimeters(float inches)
     {
         return 2.54 * inches;
     };
-    static float toInches(int centimeters)
+    static float toInches(float centimeters)
     {
         return centimeters / 2.54;
     };
