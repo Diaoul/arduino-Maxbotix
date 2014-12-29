@@ -91,6 +91,7 @@ float Maxbotix::getRange()
         break;
     case BEST:
         range = getSampleBest();
+        break;
     case NONE:
     default:
         range = sample[0];
