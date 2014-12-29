@@ -235,6 +235,21 @@ void Maxbotix::readSample()
     }
 
     // sort
+    sortSample();
+}
+
+void Maxbotix::pushToSample(float value)
+{
+    for (int i = 0; i < sample_size - 1; i++)
+    {
+        sample[i] = sample[i + 1];
+    }
+    sample[sample_size - 1] = value;
+}
+
+
+void Maxbotix::sortSample()
+{
     for (int i = 1; i < sample_size; i++)
     {
         float j = sample[i];
@@ -245,13 +260,4 @@ void Maxbotix::readSample()
         }
         sample[k + 1] = j;
     }
-}
-
-void Maxbotix::pushToSample(float value)
-{
-    for (int i = 0; i < sample_size - 1; i++)
-    {
-        sample[i] = sample[i + 1];
-    }
-    sample[sample_size - 1] = value;
 }
