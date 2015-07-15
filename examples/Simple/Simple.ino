@@ -18,7 +18,9 @@
 #include "Maxbotix.h"
 
 Maxbotix rangeSensorPW(8, Maxbotix::PW, Maxbotix::LV);
-Maxbotix rangeSensorTX(6, Maxbotix::TX, Maxbotix::LV);
+#ifdef MAXBOTIX_WITH_SOFTWARE_SERIAL
+  Maxbotix rangeSensorTX(6, Maxbotix::TX, Maxbotix::LV);
+#endif
 Maxbotix rangeSensorAD(A0, Maxbotix::AN, Maxbotix::LV);
 
 void setup()
@@ -39,7 +41,7 @@ void loop()
   Serial.print("cm - ");
   Serial.print(millis() - start);
   Serial.println("ms");
-  
+#ifdef MAXBOTIX_WITH_SOFTWARE_SERIAL
   // TX
   start = millis();
   Serial.print("TX: ");
@@ -47,7 +49,7 @@ void loop()
   Serial.print("cm - ");
   Serial.print(millis() - start);
   Serial.println("ms");
-  
+#endif
   // AD
   start = millis();
   Serial.print("AD: ");
